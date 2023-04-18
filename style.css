@@ -15,16 +15,26 @@ body{
     text-decoration: none;
     color: black;
     position: relative;
+    overflow: hidden;
 }
+.btn span{
+    position: relative;
+    z-index: 1;
 
+}
 .btn::before{
     content: "";
     position: absolute;
     background-color: orangered;
-    width: 20px;
-    height: 20px;
-    left: 50%;
-    top: 50%;
+    width: 0;
+    height: 0;
+    left: var(--xPos);
+    top: var(--yPos);
     transform: translate(-50%,-50%);
     border-radius: 50%;
+    transition: width .5s,height 0.5s;
+}
+.btn:hover::before{
+    width: 300px;
+    height: 300px;
 }
